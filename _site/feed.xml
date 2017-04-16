@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-15T19:20:42-04:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-15T21:11:25-04:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
 </subtitle><author><name>David Chanko</name></author><entry><title type="html">Website Setup</title><link href="http://localhost:4000/website/2017/04/15/website-setup.html" rel="alternate" type="text/html" title="Website Setup" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/website-setup</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/website-setup.html">&lt;p&gt;Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.&lt;/p&gt;
 
 &lt;h2 id=&quot;github-pages&quot;&gt;GitHub Pages&lt;/h2&gt;
@@ -21,6 +21,62 @@
 
 &lt;p&gt;Posts go in the &lt;em&gt;_posts&lt;/em&gt; directory.  There is an example in there to get things started. The file naming convention of &lt;em&gt;YYYY-MM-DD-title.md&lt;/em&gt; is important.&lt;/p&gt;
 
-&lt;h3 id=&quot;review-and-commit&quot;&gt;Review and Commit&lt;/h3&gt;
+&lt;h2 id=&quot;review-and-commit&quot;&gt;Review and Commit&lt;/h2&gt;
 
-&lt;p&gt;Running locally is a breeze with &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; to preview the changes.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</summary></entry></feed>
+&lt;p&gt;Running locally is a breeze with &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; to preview the changes.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</summary></entry><entry><title type="html">Markdown</title><link href="http://localhost:4000/website/2017/04/15/markdown-notes.html" rel="alternate" type="text/html" title="Markdown" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/markdown-notes</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/markdown-notes.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Here are some notes about the Markdown syntax, really only the things that are not guessable.  A comprehensive guide can be found &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;escape&quot;&gt;Escape&lt;/h3&gt;
+
+&lt;p&gt;To create escaped Markdown samples, prefix the line with four spaces or a tab to create a code block.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;### Escape
+
+To create...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+
+&lt;p&gt;Prefix each block with three backticks followed by the appropriate language code for syntax highlighting.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```cl
+(defun hello ()
+  (print &quot;Hello, World.&quot;))
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-cl highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello, World.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;math&quot;&gt;Math&lt;/h3&gt;
+
+&lt;p&gt;This requires a little setup as described in detail &lt;a href=&quot;http://g14n.info/2014/09/math-on-github-pages/&quot;&gt;here&lt;/a&gt;. Create a &lt;em&gt;_includes/lib/mathjax.html&lt;/em&gt; file with the reference to the MathJax script&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Note this differs from the &lt;em&gt;src&lt;/em&gt; in the link above, the MathJax referenced there at the time of writing will be going offline on April 30, 2017.&lt;/p&gt;
+
+&lt;p&gt;This makes the following Jekyll include available&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lib/mathjax.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;for you to use in any post or page that requires math.&lt;/p&gt;
+
+&lt;p&gt;LaTeX formulas can then be embedded by surrounding in $$ on the preceding and following lines.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$$
+y = mx + b 
+$$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y = mx + b&lt;/script&gt;</content><author><name>David Chanko</name></author><summary type="html"></summary></entry></feed>

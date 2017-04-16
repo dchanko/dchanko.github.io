@@ -27,6 +27,6 @@ Jekyll will give you an *About* page to get you started. Located in the root dir
 
 Posts go in the *_posts* directory.  There is an example in there to get things started. The file naming convention of *YYYY-MM-DD-title.md* is important.
 
-### Review and Commit
+## Review and Commit
 
 Running locally is a breeze with `bundle exec jekyll serve` to preview the changes.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated. 

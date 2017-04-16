@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Website Setup</title>
-  <meta name="description" content="Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.">
+  <title>Markdown</title>
+  <meta name="description" content="">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/website/2017/04/15/website-setup.html">
+  <link rel="canonical" href="http://localhost:4000/website/2017/04/15/markdown-notes.html">
   <link rel="alternate" type="application/rss+xml" title="Scores of Parentheses" href="/feed.xml">
   
   
@@ -67,7 +67,7 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Website Setup</h1>
+    <h1 class="post-title" itemprop="name headline">Markdown</h1>
     <p class="post-meta">
       <time datetime="2017-04-15T00:00:00-04:00" itemprop="datePublished">
         
@@ -77,31 +77,63 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<h2 id="github-pages">GitHub Pages</h2>
+<p>Here are some notes about the Markdown syntax, really only the things that are not guessable.  A comprehensive guide can be found <a href="https://daringfireball.net/projects/markdown/">here</a>.</p>
 
-<p><a href="https://pages.github.com">GitHub Pages</a> provides an excellent guide for getting started. This will walk you through creating a website for yourself in a new GitHub repository of the form <em>[GitHub User Name].github.io</em>. The URL of the website will be the same.  It is possible to use a custom domain name, though this did not seem worth it at this point. The repository must have that format for things to work correctly.</p>
+<h3 id="escape">Escape</h3>
 
-<h2 id="jekyll">Jekyll</h2>
+<p>To create escaped Markdown samples, prefix the line with four spaces or a tab to create a code block.</p>
 
-<p>After the website is created, setting up <a href="https://jekyllrb.com">Jekyll</a> is almost as easy (everything is on the main page in a few lines at the time of writing).</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>### Escape
 
-<h3 id="configuration">Configuration</h3>
+To create...
+</code></pre>
+</div>
 
-<p>File <em>_config.yml</em> holds settings for the name of your site, a descirption, contact information, and build settings.  This is where the theme can be set, though I stuck with the default <em>minima</em> theme. Themes supported by GitHub can be found <a href="https://pages.github.com/themes/">here</a>.</p>
+<h3 id="code">Code</h3>
 
-<h3 id="about-page">About Page</h3>
+<p>Prefix each block with three backticks followed by the appropriate language code for syntax highlighting.</p>
 
-<p>Jekyll will give you an <em>About</em> page to get you started. Located in the root directory, this can be updated with a more detailed description of what your site is… well, about.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>```cl
+(defun hello ()
+  (print "Hello, World."))
+```
+</code></pre>
+</div>
 
-<h3 id="posts">Posts</h3>
+<div class="language-cl highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nb">defun</span> <span class="nv">hello</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nb">print</span> <span class="s">"Hello, World."</span><span class="p">))</span>
+</code></pre>
+</div>
 
-<p>Posts go in the <em>_posts</em> directory.  There is an example in there to get things started. The file naming convention of <em>YYYY-MM-DD-title.md</em> is important.</p>
+<h3 id="math">Math</h3>
 
-<h2 id="review-and-commit">Review and Commit</h2>
+<p>This requires a little setup as described in detail <a href="http://g14n.info/2014/09/math-on-github-pages/">here</a>. Create a <em>_includes/lib/mathjax.html</em> file with the reference to the MathJax script</p>
 
-<p>Running locally is a breeze with <code class="highlighter-rouge">bundle exec jekyll serve</code> to preview the changes.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"&gt;&lt;/script&gt;
+</code></pre>
+</div>
+
+<p>Note this differs from the <em>src</em> in the link above, the MathJax referenced there at the time of writing will be going offline on April 30, 2017.</p>
+
+<p>This makes the following Jekyll include available</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">lib/mathjax.html</span><span class="w">  </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>for you to use in any post or page that requires math.</p>
+
+<p>LaTeX formulas can then be embedded by surrounding in $$ on the preceding and following lines.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$$
+y = mx + b 
+$$
+</code></pre>
+</div>
+
+<script type="math/tex; mode=display">y = mx + b</script>
 
   </div>
 
