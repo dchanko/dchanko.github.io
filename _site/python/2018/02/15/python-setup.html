@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Scores of Parentheses</title>
-  <meta name="description" content="Notes about coding and software development.">
+  <title>Python Development Setup</title>
+  <meta name="description" content="Setting up an OS X development environment for Python.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/python/2018/02/15/python-setup.html">
   <link rel="alternate" type="application/rss+xml" title="Scores of Parentheses" href="/feed.xml">
   
   
@@ -64,56 +64,86 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
-  
-  
-
-
-  <ul class="post-list">
-    
-      <li>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Python Development Setup</h1>
+    <p class="post-meta">
+      <time datetime="2018-02-15T00:00:00-05:00" itemprop="datePublished">
         
-        <span class="post-meta">Feb 15, 2018</span>
+        Feb 15, 2018
+      </time>
+      </p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/python/2018/02/15/python-setup.html">Python Development Setup</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Sep 17, 2017</span>
+  <div class="post-content" itemprop="articleBody">
+    <p>Setting up an OS X development environment for Python.</p>
 
-        <h2>
-          <a class="post-link" href="/website/2017/09/17/build-process.html">Web Build Process</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Apr 15, 2017</span>
+<h2 id="anaconda">Anaconda</h2>
 
-        <h2>
-          <a class="post-link" href="/website/2017/04/15/website-setup.html">Website Setup</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Apr 15, 2017</span>
+<p><a href="https://www.anaconda.com/download/#macos">Anaconda</a> provides a basic Python installation.</p>
 
-        <h2>
-          <a class="post-link" href="/website/2017/04/15/markdown-notes.html">Markdown</a>
-        </h2>
-      </li>
-    
-  </ul>
+<h2 id="ide">IDE</h2>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>Install the Python plug-in for VS Code.</p>
 
+<h2 id="basic-packages">Basic Packages</h2>
+
+<h3 id="virtualenv">virtualenv</h3>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo pip install virtualenv
+</code></pre>
 </div>
+
+<p>The virtualenv package allows you to keep separate dependencies by project to avoid pollution and avoid version conflicts.</p>
+
+<h3 id="virtualenvwrapper">virtualenvwrapper</h3>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo pip install virtualenvwrapper
+</code></pre>
+</div>
+
+<p>The <strong>virtualenvwrapper</strong> package provides some helper commands for <strong>virtualenv</strong>.</p>
+
+<p>It facilitates the creating and loading of project/environment pairs and can be customized by exporting the following environment variables in your <strong>~/.profile</strong> file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>export PROJECT_HOME=$HOME/programming/python/dev
+export WORKON_HOME=~/programming/python/.virtualenvs
+</code></pre>
+</div>
+
+<p><strong>PROJECT_HOME</strong> is where your project source code will reside.</p>
+
+<p><strong>WORKON_HOME</strong> is where the virutal environment for your project will reside.</p>
+
+<p>Add the following line as well to make the helper commands available:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>source "/Users/chanko/anaconda3/bin/virtualenvwrapper.sh"
+</code></pre>
+</div>
+
+<p>The basic <strong>virtualenvwrapper</strong> commands are as follows.  When creating a virtual environment for a project, from that project’s source folder:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>mkvirtualenv &lt;name&gt; 
+<span class="gp">$ </span>setvirtualenvproject
+<span class="gp">$ </span>workon &lt;name&gt;
+<span class="gp">$ </span>deactivate
+</code></pre>
+</div>
+
+<p>Or if you are starting fresh with a new project:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkproject &lt;name&gt; 
+</code></pre>
+</div>
+
+<p>This will take full advantage of <strong>PROJECT_HOME</strong> and <strong>WORKON_HOME</strong>.</p>
+
+
+  </div>
+
+  
+</article>
 
       </div>
     </main>

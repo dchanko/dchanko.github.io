@@ -99,9 +99,21 @@
 
 <p>Posts go in the <em>_posts</em> directory.  There is an example in there to get things started. The file naming convention of <em>YYYY-MM-DD-title.md</em> is important.</p>
 
+<h4 id="drafts">Drafts</h4>
+
+<p>Posts that are not quite ready can be put in the <em>_drafts</em> directory.</p>
+
 <h2 id="review-and-commit">Review and Commit</h2>
 
-<p>Running locally is a breeze with <code class="highlighter-rouge">bundle exec jekyll serve</code> to preview the changes.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.</p>
+<p>Running locally is a breeze with</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>bundle <span class="nb">exec </span>jekyll serve
+</code></pre>
+</div>
+<p>to preview the changes.</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>bundle <span class="nb">exec </span>jekyll serve --drafts
+</code></pre>
+</div>
+<p>will include drafts.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.</p>
 
   </div>
 

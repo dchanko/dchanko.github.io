@@ -1,5 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-15T21:11:25-04:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
-</subtitle><author><name>David Chanko</name></author><entry><title type="html">Website Setup</title><link href="http://localhost:4000/website/2017/04/15/website-setup.html" rel="alternate" type="text/html" title="Website Setup" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/website-setup</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/website-setup.html">&lt;p&gt;Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-15T19:18:30-05:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
+</subtitle><author><name>David Chanko</name></author><entry><title type="html">Python Development Setup</title><link href="http://localhost:4000/python/2018/02/15/python-setup.html" rel="alternate" type="text/html" title="Python Development Setup" /><published>2018-02-15T00:00:00-05:00</published><updated>2018-02-15T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/15/python-setup</id><content type="html" xml:base="http://localhost:4000/python/2018/02/15/python-setup.html">&lt;p&gt;Setting up an OS X development environment for Python.&lt;/p&gt;
+
+&lt;h2 id=&quot;anaconda&quot;&gt;Anaconda&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.anaconda.com/download/#macos&quot;&gt;Anaconda&lt;/a&gt; provides a basic Python installation.&lt;/p&gt;
+
+&lt;h2 id=&quot;ide&quot;&gt;IDE&lt;/h2&gt;
+
+&lt;p&gt;Install the Python plug-in for VS Code.&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-packages&quot;&gt;Basic Packages&lt;/h2&gt;
+
+&lt;h3 id=&quot;virtualenv&quot;&gt;virtualenv&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo pip install virtualenv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The virtualenv package allows you to keep separate dependencies by project to avoid pollution and avoid version conflicts.&lt;/p&gt;
+
+&lt;h3 id=&quot;virtualenvwrapper&quot;&gt;virtualenvwrapper&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo pip install virtualenvwrapper
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;strong&gt;virtualenvwrapper&lt;/strong&gt; package provides some helper commands for &lt;strong&gt;virtualenv&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;It facilitates the creating and loading of project/environment pairs and can be customized by exporting the following environment variables in your &lt;strong&gt;~/.profile&lt;/strong&gt; file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export PROJECT_HOME=$HOME/programming/python/dev
+export WORKON_HOME=~/programming/python/.virtualenvs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;PROJECT_HOME&lt;/strong&gt; is where your project source code will reside.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WORKON_HOME&lt;/strong&gt; is where the virutal environment for your project will reside.&lt;/p&gt;
+
+&lt;p&gt;Add the following line as well to make the helper commands available:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source &quot;/Users/chanko/anaconda3/bin/virtualenvwrapper.sh&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The basic &lt;strong&gt;virtualenvwrapper&lt;/strong&gt; commands are as follows.  When creating a virtual environment for a project, from that project’s source folder:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkvirtualenv &amp;lt;name&amp;gt; 
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;setvirtualenvproject
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;workon &amp;lt;name&amp;gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;deactivate
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or if you are starting fresh with a new project:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkproject &amp;lt;name&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This will take full advantage of &lt;strong&gt;PROJECT_HOME&lt;/strong&gt; and &lt;strong&gt;WORKON_HOME&lt;/strong&gt;.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up an OS X development environment for Python.</summary></entry><entry><title type="html">Website Setup</title><link href="http://localhost:4000/website/2017/04/15/website-setup.html" rel="alternate" type="text/html" title="Website Setup" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/website-setup</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/website-setup.html">&lt;p&gt;Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.&lt;/p&gt;
 
 &lt;h2 id=&quot;github-pages&quot;&gt;GitHub Pages&lt;/h2&gt;
 
@@ -21,9 +81,21 @@
 
 &lt;p&gt;Posts go in the &lt;em&gt;_posts&lt;/em&gt; directory.  There is an example in there to get things started. The file naming convention of &lt;em&gt;YYYY-MM-DD-title.md&lt;/em&gt; is important.&lt;/p&gt;
 
+&lt;h4 id=&quot;drafts&quot;&gt;Drafts&lt;/h4&gt;
+
+&lt;p&gt;Posts that are not quite ready can be put in the &lt;em&gt;_drafts&lt;/em&gt; directory.&lt;/p&gt;
+
 &lt;h2 id=&quot;review-and-commit&quot;&gt;Review and Commit&lt;/h2&gt;
 
-&lt;p&gt;Running locally is a breeze with &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; to preview the changes.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</summary></entry><entry><title type="html">Markdown</title><link href="http://localhost:4000/website/2017/04/15/markdown-notes.html" rel="alternate" type="text/html" title="Markdown" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/markdown-notes</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/markdown-notes.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Running locally is a breeze with&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;to preview the changes.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve --drafts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;will include drafts.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</summary></entry><entry><title type="html">Markdown</title><link href="http://localhost:4000/website/2017/04/15/markdown-notes.html" rel="alternate" type="text/html" title="Markdown" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/markdown-notes</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/markdown-notes.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Here are some notes about the Markdown syntax, really only the things that are not guessable.  A comprehensive guide can be found &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
