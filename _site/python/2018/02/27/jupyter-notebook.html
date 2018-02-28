@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Web Build Process</title>
-  <meta name="description" content="The build process for web.">
+  <title>Jupyter Notebook Setup</title>
+  <meta name="description" content="Using Jupyter Notebook.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/website/2017/09/17/build-process.html">
+  <link rel="canonical" href="http://localhost:4000/python/2018/02/27/jupyter-notebook.html">
   <link rel="alternate" type="application/rss+xml" title="Scores of Parentheses" href="/feed.xml">
   
   
@@ -67,48 +67,32 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Web Build Process</h1>
+    <h1 class="post-title" itemprop="name headline">Jupyter Notebook Setup</h1>
     <p class="post-meta">
-      <time datetime="2017-09-17T00:00:00-04:00" itemprop="datePublished">
+      <time datetime="2018-02-27T00:00:00-05:00" itemprop="datePublished">
         
-        Sep 17, 2017
+        Feb 27, 2018
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>The build process for web.</p>
+    <p>Using Jupyter Notebook.</p>
 
-<h2 id="build-js">Build JS</h2>
+<h2 id="anaconda">Anaconda</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm run build
-<span class="gp">$ </span>docker build -t my-registry:55000/sylg-client:test . 
-<span class="gp">$ </span>docker push my-registry:55000/sylg/client:test
-<span class="gp">$ </span>
+<p><a href="https://jupyter.org">Jupyter Notebook</a> is included in the <a href="https://www.anaconda.com/download/#macos">Anaconda</a> installation.</p>
+
+<h2 id="running">Running</h2>
+
+<p>In a new terminal window, run:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>jupyter notebook
 </code></pre>
 </div>
 
-<p><a href="https://pages.github.com">GitHub Pages</a> provides an excellent guide for getting started. This will walk you through creating a website for yourself in a new GitHub repository of the form <em>[GitHub User Name].github.io</em>. The URL of the website will be the same.  It is possible to use a custom domain name, though this did not seem worth it at this point. The repository must have that format for things to work correctly.</p>
+<p>This will start a webserver serving up Jupyter Notebook.  The files displayed will be relative to the current directory.</p>
 
-<h2 id="jekyll">Jekyll</h2>
-
-<p>After the website is created, setting up <a href="https://jekyllrb.com">Jekyll</a> is almost as easy (everything is on the main page in a few lines at the time of writing).</p>
-
-<h3 id="configuration">Configuration</h3>
-
-<p>File <em>_config.yml</em> holds settings for the name of your site, a descirption, contact information, and build settings.  This is where the theme can be set, though I stuck with the default <em>minima</em> theme. Themes supported by GitHub can be found <a href="https://pages.github.com/themes/">here</a>.</p>
-
-<h3 id="about-page">About Page</h3>
-
-<p>Jekyll will give you an <em>About</em> page to get you started. Located in the root directory, this can be updated with a more detailed description of what your site is… well, about.</p>
-
-<h3 id="posts">Posts</h3>
-
-<p>Posts go in the <em>_posts</em> directory.  There is an example in there to get things started. The file naming convention of <em>YYYY-MM-DD-title.md</em> is important.</p>
-
-<h2 id="review-and-commit">Review and Commit</h2>
-
-<p>Running locally is a breeze with <code class="highlighter-rouge">bundle exec jekyll serve</code> to preview the changes.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.</p>
 
   </div>
 

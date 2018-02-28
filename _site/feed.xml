@@ -1,5 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-15T19:18:30-05:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
-</subtitle><author><name>David Chanko</name></author><entry><title type="html">Python Development Setup</title><link href="http://localhost:4000/python/2018/02/15/python-setup.html" rel="alternate" type="text/html" title="Python Development Setup" /><published>2018-02-15T00:00:00-05:00</published><updated>2018-02-15T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/15/python-setup</id><content type="html" xml:base="http://localhost:4000/python/2018/02/15/python-setup.html">&lt;p&gt;Setting up an OS X development environment for Python.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-27T19:04:01-05:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
+</subtitle><author><name>David Chanko</name></author><entry><title type="html">Jupyter Notebook Setup</title><link href="http://localhost:4000/python/2018/02/27/jupyter-notebook.html" rel="alternate" type="text/html" title="Jupyter Notebook Setup" /><published>2018-02-27T00:00:00-05:00</published><updated>2018-02-27T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/27/jupyter-notebook</id><content type="html" xml:base="http://localhost:4000/python/2018/02/27/jupyter-notebook.html">&lt;p&gt;Using Jupyter Notebook.&lt;/p&gt;
+
+&lt;h2 id=&quot;anaconda&quot;&gt;Anaconda&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jupyter.org&quot;&gt;Jupyter Notebook&lt;/a&gt; is included in the &lt;a href=&quot;https://www.anaconda.com/download/#macos&quot;&gt;Anaconda&lt;/a&gt; installation.&lt;/p&gt;
+
+&lt;h2 id=&quot;running&quot;&gt;Running&lt;/h2&gt;
+
+&lt;p&gt;In a new terminal window, run:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;jupyter notebook
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This will start a webserver serving up Jupyter Notebook.  The files displayed will be relative to the current directory.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Using Jupyter Notebook.</summary></entry><entry><title type="html">Python Development Setup</title><link href="http://localhost:4000/python/2018/02/15/python-setup.html" rel="alternate" type="text/html" title="Python Development Setup" /><published>2018-02-15T00:00:00-05:00</published><updated>2018-02-15T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/15/python-setup</id><content type="html" xml:base="http://localhost:4000/python/2018/02/15/python-setup.html">&lt;p&gt;Setting up an OS X development environment for Python.&lt;/p&gt;
 
 &lt;h2 id=&quot;anaconda&quot;&gt;Anaconda&lt;/h2&gt;
 
