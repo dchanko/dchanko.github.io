@@ -55,6 +55,9 @@
             
             
           
+            
+            
+          
         </div>
       </nav>
     
@@ -91,26 +94,23 @@
 
 <h3 id="virtualenv">virtualenv</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo pip install virtualenv
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>pip install virtualenv
+</code></pre></div></div>
 
 <p>The virtualenv package allows you to keep separate dependencies by project to avoid pollution and avoid version conflicts.</p>
 
 <h3 id="virtualenvwrapper">virtualenvwrapper</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo pip install virtualenvwrapper
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>pip install virtualenvwrapper
+</code></pre></div></div>
 
 <p>The <strong>virtualenvwrapper</strong> package provides some helper commands for <strong>virtualenv</strong>.</p>
 
 <p>It facilitates the creating and loading of project/environment pairs and can be customized by exporting the following environment variables in your <strong>~/.profile</strong> file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>export PROJECT_HOME=$HOME/programming/python/dev
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PROJECT_HOME=$HOME/programming/python/dev
 export WORKON_HOME=~/programming/python/.virtualenvs
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>PROJECT_HOME</strong> is where your project source code will reside.</p>
 
@@ -118,24 +118,21 @@ export WORKON_HOME=~/programming/python/.virtualenvs
 
 <p>Add the following line as well to make the helper commands available:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>source "/Users/chanko/anaconda3/bin/virtualenvwrapper.sh"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "/Users/chanko/anaconda3/bin/virtualenvwrapper.sh"
+</code></pre></div></div>
 
 <p>The basic <strong>virtualenvwrapper</strong> commands are as follows.  When creating a virtual environment for a project, from that project’s source folder:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>mkvirtualenv &lt;name&gt; 
-<span class="gp">$ </span>setvirtualenvproject
-<span class="gp">$ </span>workon &lt;name&gt;
-<span class="gp">$ </span>deactivate
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mkvirtualenv &lt;name&gt; 
+<span class="nv">$ </span>setvirtualenvproject
+<span class="nv">$ </span>workon &lt;name&gt;
+<span class="nv">$ </span>deactivate
+</code></pre></div></div>
 
 <p>Or if you are starting fresh with a new project:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkproject &lt;name&gt; 
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkproject &lt;name&gt; 
+</code></pre></div></div>
 
 <p>This will take full advantage of <strong>PROJECT_HOME</strong> and <strong>WORKON_HOME</strong>.</p>
 

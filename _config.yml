@@ -28,6 +28,8 @@ markdown: kramdown
 theme: minima
 gems:
   - jekyll-feed
+plugins: ['jekyll/scholar']
 exclude:
   - Gemfile
   - Gemfile.lock
+

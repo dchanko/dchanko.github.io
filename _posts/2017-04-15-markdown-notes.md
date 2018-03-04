@@ -57,23 +57,52 @@ $$
 
 ### Citations
 
-[Jekyll-citation](https://github.com/archome/jekyll-citation) can be used for citations.  
+[Jekyll-scholar](https://github.com/inukshuk/jekyll-scholar) can be used for citations {% cite jekyll-scholar %}.  
 
-{% bibtex %}
-@article{brothman1991orders,
-  title={Orders of value: probing the theoretical terms of Archival Practice},
-  author={Brothman, B.},
-  journal={Archivaria},
-  volume={32},
-  number={1},
-  year={1991}
+In your *./_bibliography/references.bib* file you can add entries using the bibtex style:
+
+```bibtex
+@online{jekyll-scholar,
+  author    = {Keil, Sylvester},
+  title     = {Jekyll-Scholar},
+  year      = {2011},
+  url       = {https://github.com/inukshuk/jekyll-scholar},
+  urldate   = {2018-03-04}
 }
-{% endbibtex %}
-
-Inline {% bibtex %}@citation{brothman1991orders, id={brothman1991orders}}(% endbibtex %}
-
-```latex
 ```
 
+Citations can be added inline as:
 
+{% raw %}
+    {% cite jekyll-scholar %}
+{% endraw %}
 
+and then the references rendered by:
+
+{% raw %}
+    References 
+    ----------
+
+    {% bibliography --cited %}
+{% endraw %}
+
+References 
+----------
+
+{% bibliography --cited %}
+
+This will render only the entries that are referenced in the document. 
+
+{% raw %}
+    Bibliography
+    ------------
+
+    {% bibliography %}
+{% endraw %}
+
+will render everything.
+
+Bibliography
+------------
+
+{% bibliography %}

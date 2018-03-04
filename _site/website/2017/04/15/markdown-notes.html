@@ -55,6 +55,9 @@
             
             
           
+            
+            
+          
         </div>
       </nav>
     
@@ -85,65 +88,96 @@
 
 <p>To create escaped Markdown samples, prefix the line with four spaces or a tab to create a code block.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>### Escape
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### Escape
 
 To create...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="code">Code</h3>
 
 <p>Prefix each block with three backticks followed by the appropriate language code for syntax highlighting.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>```cl
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```cl
 (defun hello ()
   (print "Hello, World."))
 ```
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-cl highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nb">defun</span> <span class="nv">hello</span> <span class="p">()</span>
+<div class="language-cl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">defun</span> <span class="nv">hello</span> <span class="p">()</span>
   <span class="p">(</span><span class="nb">print</span> <span class="s">"Hello, World."</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="math">Math</h3>
 
 <p>This requires a little setup as described in detail <a href="http://g14n.info/2014/09/math-on-github-pages/">here</a>. Create a <em>_includes/lib/mathjax.html</em> file with the reference to the MathJax script</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"&gt;&lt;/script&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"&gt;&lt;/script&gt;
+</code></pre></div></div>
 
 <p>Note this differs from the <em>src</em> in the link above, the MathJax referenced there at the time of writing will be going offline on April 30, 2017.</p>
 
 <p>This makes the following Jekyll include available</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">lib/mathjax.html</span><span class="w">  </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include lib/mathjax.html  %}
+</code></pre></div></div>
 
 <p>for you to use in any post or page that requires math.</p>
 
 <p>LaTeX formulas can then be embedded by surrounding in $$ on the preceding and following lines.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$$
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$
 y = mx + b 
 $$
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <script type="math/tex; mode=display">y = mx + b</script>
 
 <h3 id="citations">Citations</h3>
 
-<p><a href="https://github.com/archome/jekyll-citation">Jekyll-citation</a> can be used for citations.</p>
+<p><a href="https://github.com/inukshuk/jekyll-scholar">Jekyll-scholar</a> can be used for citations <a href="#jekyll-scholar">(Keil, 2011)</a>.</p>
 
-<p>Brothman, B. (1991). Orders of value: probing the theoretical terms of Archival Practice. <i>Archivaria</i>, <i>32</i>(1).</p>
+<p>In your <em>./_bibliography/references.bib</em> file you can add entries using the bibtex style:</p>
 
-<div class="language-latex highlighter-rouge"><pre class="highlight"><code></code></pre>
-</div>
+<pre><code class="language-bibtex">@online{jekyll-scholar,
+  author    = {Keil, Sylvester},
+  title     = {Jekyll-Scholar},
+  year      = {2011},
+  url       = {https://github.com/inukshuk/jekyll-scholar},
+  urldate   = {2018-03-04}
+}
+</code></pre>
 
+<p>Citations can be added inline as:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% cite jekyll-scholar %}
+</code></pre></div></div>
+
+<p>and then the references rendered by:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>References 
+----------
+
+{% bibliography --cited %}
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="jekyll-scholar">Keil, S. (2011). Jekyll-Scholar. Retrieved from https://github.com/inukshuk/jekyll-scholar</span></li></ol>
+
+<p>This will render only the entries that are referenced in the document.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bibliography
+------------
+
+{% bibliography %}
+</code></pre></div></div>
+
+<p>will render everything.</p>
+
+<h2 id="bibliography">Bibliography</h2>
+
+<ol class="bibliography"><li><span id="game">Osborne, M. J., &amp; Rubinstein, A. (1994). <i>A Course in Game Theory</i>. The MIT Press.</span></li>
+<li><span id="jekyll-scholar">Keil, S. (2011). Jekyll-Scholar. Retrieved from https://github.com/inukshuk/jekyll-scholar</span></li></ol>
 
   </div>
 

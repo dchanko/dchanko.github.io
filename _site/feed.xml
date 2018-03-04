@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-04T10:23:53-05:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-04T16:24:46-05:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
 </subtitle><author><name>David Chanko</name></author><entry><title type="html">Jupyter Notebook Setup</title><link href="http://localhost:4000/python/2018/02/27/jupyter-notebook.html" rel="alternate" type="text/html" title="Jupyter Notebook Setup" /><published>2018-02-27T00:00:00-05:00</published><updated>2018-02-27T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/27/jupyter-notebook</id><content type="html" xml:base="http://localhost:4000/python/2018/02/27/jupyter-notebook.html">&lt;p&gt;Using Jupyter Notebook.&lt;/p&gt;
 
 &lt;h2 id=&quot;anaconda&quot;&gt;Anaconda&lt;/h2&gt;
@@ -9,9 +9,8 @@
 
 &lt;p&gt;In a new terminal window, run:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;jupyter notebook
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This will start a webserver serving up Jupyter Notebook.  The files displayed will be relative to the current directory.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Using Jupyter Notebook.</summary></entry><entry><title type="html">Python Development Setup</title><link href="http://localhost:4000/python/2018/02/15/python-setup.html" rel="alternate" type="text/html" title="Python Development Setup" /><published>2018-02-15T00:00:00-05:00</published><updated>2018-02-15T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/15/python-setup</id><content type="html" xml:base="http://localhost:4000/python/2018/02/15/python-setup.html">&lt;p&gt;Setting up an OS X development environment for Python.&lt;/p&gt;
 
@@ -27,26 +26,23 @@
 
 &lt;h3 id=&quot;virtualenv&quot;&gt;virtualenv&lt;/h3&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo pip install virtualenv
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pip install virtualenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The virtualenv package allows you to keep separate dependencies by project to avoid pollution and avoid version conflicts.&lt;/p&gt;
 
 &lt;h3 id=&quot;virtualenvwrapper&quot;&gt;virtualenvwrapper&lt;/h3&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo pip install virtualenvwrapper
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pip install virtualenvwrapper
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The &lt;strong&gt;virtualenvwrapper&lt;/strong&gt; package provides some helper commands for &lt;strong&gt;virtualenv&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;It facilitates the creating and loading of project/environment pairs and can be customized by exporting the following environment variables in your &lt;strong&gt;~/.profile&lt;/strong&gt; file:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export PROJECT_HOME=$HOME/programming/python/dev
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export PROJECT_HOME=$HOME/programming/python/dev
 export WORKON_HOME=~/programming/python/.virtualenvs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;PROJECT_HOME&lt;/strong&gt; is where your project source code will reside.&lt;/p&gt;
 
@@ -54,24 +50,21 @@ export WORKON_HOME=~/programming/python/.virtualenvs
 
 &lt;p&gt;Add the following line as well to make the helper commands available:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source &quot;/Users/chanko/anaconda3/bin/virtualenvwrapper.sh&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source &quot;/Users/chanko/anaconda3/bin/virtualenvwrapper.sh&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The basic &lt;strong&gt;virtualenvwrapper&lt;/strong&gt; commands are as follows.  When creating a virtual environment for a project, from that project’s source folder:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkvirtualenv &amp;lt;name&amp;gt; 
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;setvirtualenvproject
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;workon &amp;lt;name&amp;gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;deactivate
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkvirtualenv &amp;lt;name&amp;gt; 
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;setvirtualenvproject
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;workon &amp;lt;name&amp;gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;deactivate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Or if you are starting fresh with a new project:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkproject &amp;lt;name&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkproject &amp;lt;name&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This will take full advantage of &lt;strong&gt;PROJECT_HOME&lt;/strong&gt; and &lt;strong&gt;WORKON_HOME&lt;/strong&gt;.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up an OS X development environment for Python.</summary></entry><entry><title type="html">Website Setup</title><link href="http://localhost:4000/website/2017/04/15/website-setup.html" rel="alternate" type="text/html" title="Website Setup" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/website-setup</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/website-setup.html">&lt;p&gt;Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.&lt;/p&gt;
 
@@ -102,13 +95,11 @@ export WORKON_HOME=~/programming/python/.virtualenvs
 &lt;h2 id=&quot;review-and-commit&quot;&gt;Review and Commit&lt;/h2&gt;
 
 &lt;p&gt;Running locally is a breeze with&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;to preview the changes.&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve --drafts
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--drafts&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;will include drafts.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</summary></entry><entry><title type="html">Markdown</title><link href="http://localhost:4000/website/2017/04/15/markdown-notes.html" rel="alternate" type="text/html" title="Markdown" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/markdown-notes</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/markdown-notes.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Here are some notes about the Markdown syntax, really only the things that are not guessable.  A comprehensive guide can be found &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -117,61 +108,93 @@ export WORKON_HOME=~/programming/python/.virtualenvs
 
 &lt;p&gt;To create escaped Markdown samples, prefix the line with four spaces or a tab to create a code block.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;### Escape
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;### Escape
 
 To create...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
 
 &lt;p&gt;Prefix each block with three backticks followed by the appropriate language code for syntax highlighting.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```cl
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```cl
 (defun hello ()
   (print &quot;Hello, World.&quot;))
 ```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;language-cl highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;div class=&quot;language-cl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello, World.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;math&quot;&gt;Math&lt;/h3&gt;
 
 &lt;p&gt;This requires a little setup as described in detail &lt;a href=&quot;http://g14n.info/2014/09/math-on-github-pages/&quot;&gt;here&lt;/a&gt;. Create a &lt;em&gt;_includes/lib/mathjax.html&lt;/em&gt; file with the reference to the MathJax script&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Note this differs from the &lt;em&gt;src&lt;/em&gt; in the link above, the MathJax referenced there at the time of writing will be going offline on April 30, 2017.&lt;/p&gt;
 
 &lt;p&gt;This makes the following Jekyll include available&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lib/mathjax.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include lib/mathjax.html  %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;for you to use in any post or page that requires math.&lt;/p&gt;
 
 &lt;p&gt;LaTeX formulas can then be embedded by surrounding in $$ on the preceding and following lines.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$$
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$$
 y = mx + b 
 $$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;y = mx + b&lt;/script&gt;
 
 &lt;h3 id=&quot;citations&quot;&gt;Citations&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/archome/jekyll-citation&quot;&gt;Jekyll-citation&lt;/a&gt; can be used for citations.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/inukshuk/jekyll-scholar&quot;&gt;Jekyll-scholar&lt;/a&gt; can be used for citations &lt;a href=&quot;#jekyll-scholar&quot;&gt;(Keil, 2011)&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Brothman, B. (1991). Orders of value: probing the theoretical terms of Archival Practice. &lt;i&gt;Archivaria&lt;/i&gt;, &lt;i&gt;32&lt;/i&gt;(1).&lt;/p&gt;
+&lt;p&gt;In your &lt;em&gt;./_bibliography/references.bib&lt;/em&gt; file you can add entries using the bibtex style:&lt;/p&gt;
 
-&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>David Chanko</name></author><summary type="html"></summary></entry></feed>
+&lt;pre&gt;&lt;code class=&quot;language-bibtex&quot;&gt;@online{jekyll-scholar,
+  author    = {Keil, Sylvester},
+  title     = {Jekyll-Scholar},
+  year      = {2011},
+  url       = {https://github.com/inukshuk/jekyll-scholar},
+  urldate   = {2018-03-04}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Citations can be added inline as:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% cite jekyll-scholar %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and then the references rendered by:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;References 
+----------
+
+{% bibliography --cited %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;jekyll-scholar&quot;&gt;Keil, S. (2011). Jekyll-Scholar. Retrieved from https://github.com/inukshuk/jekyll-scholar&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;This will render only the entries that are referenced in the document.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bibliography
+------------
+
+{% bibliography %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;will render everything.&lt;/p&gt;
+
+&lt;h2 id=&quot;bibliography&quot;&gt;Bibliography&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;game&quot;&gt;Osborne, M. J., &amp;amp; Rubinstein, A. (1994). &lt;i&gt;A Course in Game Theory&lt;/i&gt;. The MIT Press.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;jekyll-scholar&quot;&gt;Keil, S. (2011). Jekyll-Scholar. Retrieved from https://github.com/inukshuk/jekyll-scholar&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name>David Chanko</name></author><summary type="html"></summary></entry></feed>
