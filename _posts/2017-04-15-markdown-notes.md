@@ -54,3 +54,26 @@ LaTeX formulas can then be embedded by surrounding in $$ on the preceding and fo
 $$
 y = mx + b 
 $$
+
+### Citations
+
+[Jekyll-citation](https://github.com/archome/jekyll-citation) can be used for citations.  
+
+{% bibtex %}
+@article{brothman1991orders,
+  title={Orders of value: probing the theoretical terms of Archival Practice},
+  author={Brothman, B.},
+  journal={Archivaria},
+  volume={32},
+  number={1},
+  year={1991}
+}
+{% endbibtex %}
+
+Inline {% bibtex %}@citation{brothman1991orders, id={brothman1991orders}}(% endbibtex %}
+
+```latex
+```
+
+
+
