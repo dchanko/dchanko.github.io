@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Scores of Parentheses</title>
-  <meta name="description" content="Notes about coding and software development.">
+  <title>Game Theory Introduction</title>
+  <meta name="description" content="Some notes on the basics of game theory, taken from (Osborne &amp;amp; Rubinstein, 1994).">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/game-theory/2018/03/01/game-theory-intro.html">
   <link rel="alternate" type="application/rss+xml" title="Scores of Parentheses" href="/feed.xml">
   
   
@@ -64,65 +64,68 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Game Theory Introduction</h1>
+    <p class="post-meta">
+      <time datetime="2018-03-01T00:00:00-05:00" itemprop="datePublished">
+        
+        Mar 1, 2018
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<p>Some notes on the basics of game theory, taken from <a href="#game">(Osborne &amp; Rubinstein, 1994)</a>.</p>
+
+<h2 id="definition-of-a-game">Definition of a Game</h2>
+
+<p>A game consists of a set of \( N \) players and a set of \( A_{i} \) actions for each player \( i \in N \).  The set of outcomes, \( A = \times_{j \in N} A_{j} \), is the set of all possible action profiles, which in turn contain one action for each player:</p>
+
+<p>\[ 
+a 
+= 
+(a_{j})_{j \in N}<br />
+=
+\begin{pmatrix}
+a_{1} \\
+a_{2} \\
+\vdots \\
+a_{|N|}
+\end{pmatrix}
+\]</p>
+
+<p>for \( a \in A \).  An alternate representation of a profile \( ( x ) \) for \( i \in N \) is \( ( x_{-i}, x_{i} ) \), where \( x_{-i} = ( x_{j})_{j \in N \backslash \{i\}} \) representing all members of profile \(  ( x ) \) for all players except \( i \), and \( x_{i} \) is the member of profile \( ( x ) \) for player \( i \).</p>
+
+<p>A preference relation \( \succeq_{i} \) on \( A \) for each \( i \in N \) indicates which action profiles (outcomes) are preferred by the player. This may also be put in terms of a utility function \( u_{i} : A \to \mathbb{R} \) where \( u_{i}(a) \geq u_{i}(b) \implies a \succeq_{i} b \).</p>
+
+<p>A game may be summarized as</p>
+
+<p>\[
+\langle N, (A_{i}), (\succeq_{i}) \rangle
+\]</p>
+
+<p>or</p>
+
+<p>\[
+\langle N, (A_{i}), (u_{i}) \rangle.
+\]</p>
+
+<h2 id="nash-equilibrium">Nash Equilibrium</h2>
+
+<p>A Nash Equilibrium of a game \( \langle N, (A_{i}), (\succeq_{i}) \rangle \) is a profile \( a^{\ast} \in A \) such that \( ( a_{-i}^{\ast}, a_{i}^{\ast} ) \succeq_{i} ( a_{-i}^{\ast}, a_{i} ) \) for all \( a_{i} \in A_{i} \). Each player \( i \in N \) prefers their action \( a_{i}^{\ast} \) in profile \( ( a^{\ast} ) \) more than any other given the actions \( a_{-i}^{\ast} \) of the other players.  In other words, no single player can profitably deviate from their action in \( ( a^{\ast} ) \).</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="game">Osborne, M. J., &amp; Rubinstein, A. (1994). <i>A Course in Game Theory</i>. The MIT Press.</span></li></ol>
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        
-        <span class="post-meta">Mar 1, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/game-theory/2018/03/01/game-theory-intro.html">Game Theory Introduction</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Feb 27, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/python/2018/02/27/jupyter-notebook.html">Jupyter Notebook Setup</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Feb 15, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/python/2018/02/15/python-setup.html">Python Development Setup</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Apr 15, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/website/2017/04/15/website-setup.html">Website Setup</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Apr 15, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/website/2017/04/15/markdown-notes.html">Markdown</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>
