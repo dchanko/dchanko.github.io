@@ -1,5 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-03-04T16:35:00-05:00</updated><id>/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
-</subtitle><author><name>David Chanko</name></author><entry><title type="html">Jupyter Notebook Setup</title><link href="/python/2018/02/27/jupyter-notebook.html" rel="alternate" type="text/html" title="Jupyter Notebook Setup" /><published>2018-02-27T00:00:00-05:00</published><updated>2018-02-27T00:00:00-05:00</updated><id>/python/2018/02/27/jupyter-notebook</id><content type="html" xml:base="/python/2018/02/27/jupyter-notebook.html">&lt;p&gt;Using Jupyter Notebook.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-22T09:09:57-04:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
+</subtitle><author><name>David Chanko</name></author><entry><title type="html">Game Theory Introduction</title><link href="http://localhost:4000/website/2018/03/01/game-theory-intro.html" rel="alternate" type="text/html" title="Game Theory Introduction" /><published>2018-03-01T00:00:00-05:00</published><updated>2018-03-01T00:00:00-05:00</updated><id>http://localhost:4000/website/2018/03/01/game-theory-intro</id><content type="html" xml:base="http://localhost:4000/website/2018/03/01/game-theory-intro.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Some notes on the basics of game theory, taken from &lt;a href=&quot;#game&quot;&gt;(Osborne &amp;amp; Rubinstein, 1994)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;definition-of-a-game&quot;&gt;Definition of a Game&lt;/h2&gt;
+
+&lt;p&gt;A game consists of a set of \( N \) players and a set of \( A_{i} \) actions for each player \( i \in N \).  The set of outcomes, \( A = \times_{j \in N} A_{j} \), is the set of all possible action profiles, which in turn contain one action for each player:&lt;/p&gt;
+
+&lt;p&gt;\[ 
+a 
+= 
+(a_{j})_{j \in N}&lt;br /&gt;
+=
+\begin{pmatrix}
+a_{1} \\
+a_{2} \\
+\vdots \\
+a_{|N|}
+\end{pmatrix}
+\]&lt;/p&gt;
+
+&lt;p&gt;for \( a \in A \).  An alternate representation of a profile \( ( x ) \) for \( i \in N \) is \( ( x_{-i}, x_{i} ) \), where \( x_{-i} = ( x_{j})_{j \in N \backslash \{i\}} \) representing all members of profile \(  ( x ) \) for all players except \( i \), and \( x_{i} \) is the member of profile \( ( x ) \) for player \( i \).&lt;/p&gt;
+
+&lt;p&gt;A preference relation \( \succeq_{i} \) on \( A \) for each \( i \in N \) indicates which action profiles (outcomes) are preferred by the player. This may also be put in terms of a utility function \( u_{i} : A \to \mathbb{R} \) where \( u_{i}(a) \geq u_{i}(b) \implies a \succeq_{i} b \).&lt;/p&gt;
+
+&lt;p&gt;A game may be summarized as&lt;/p&gt;
+
+&lt;p&gt;\[
+\langle N, (A_{i}), (\succeq_{i}) \rangle
+\]&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;\[
+\langle N, (A_{i}), (u_{i}) \rangle.
+\]&lt;/p&gt;
+
+&lt;h2 id=&quot;nash-equilibrium&quot;&gt;Nash Equilibrium&lt;/h2&gt;
+
+&lt;p&gt;A Nash Equilibrium of a game \( \langle N, (A_{i}), (\succeq_{i}) \rangle \) is a profile \( a^{\ast} \in A \) such that \( ( a_{-i}^{\ast}, a_{i}^{\ast} ) \succeq_{i} ( a_{-i}^{\ast}, a_{i} ) \) for all \( a_{i} \in A_{i} \). Each player \( i \in N \) prefers their action \( a_{i}^{\ast} \) in profile \( ( a^{\ast} ) \) more than any other given the actions \( a_{-i}^{\ast} \) of the other players.  In other words, no single player can profitably deviate from their action in \( ( a^{\ast} ) \).&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;game&quot;&gt;Osborne, M. J., &amp;amp; Rubinstein, A. (1994). &lt;i&gt;A Course in Game Theory&lt;/i&gt;. The MIT Press.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name>David Chanko</name></author><summary type="html">Some notes on the basics of game theory, taken from (Osborne &amp;amp; Rubinstein, 1994).</summary></entry><entry><title type="html">Jupyter Notebook Setup</title><link href="http://localhost:4000/python/2018/02/27/jupyter-notebook.html" rel="alternate" type="text/html" title="Jupyter Notebook Setup" /><published>2018-02-27T00:00:00-05:00</published><updated>2018-02-27T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/27/jupyter-notebook</id><content type="html" xml:base="http://localhost:4000/python/2018/02/27/jupyter-notebook.html">&lt;p&gt;Using Jupyter Notebook.&lt;/p&gt;
 
 &lt;h2 id=&quot;anaconda&quot;&gt;Anaconda&lt;/h2&gt;
 
@@ -12,7 +55,7 @@
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This will start a webserver serving up Jupyter Notebook.  The files displayed will be relative to the current directory.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Using Jupyter Notebook.</summary></entry><entry><title type="html">Python Development Setup</title><link href="/python/2018/02/15/python-setup.html" rel="alternate" type="text/html" title="Python Development Setup" /><published>2018-02-15T00:00:00-05:00</published><updated>2018-02-15T00:00:00-05:00</updated><id>/python/2018/02/15/python-setup</id><content type="html" xml:base="/python/2018/02/15/python-setup.html">&lt;p&gt;Setting up an OS X development environment for Python.&lt;/p&gt;
+&lt;p&gt;This will start a webserver serving up Jupyter Notebook.  The files displayed will be relative to the current directory.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Using Jupyter Notebook.</summary></entry><entry><title type="html">Python Development Setup</title><link href="http://localhost:4000/python/2018/02/15/python-setup.html" rel="alternate" type="text/html" title="Python Development Setup" /><published>2018-02-15T00:00:00-05:00</published><updated>2018-02-15T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/15/python-setup</id><content type="html" xml:base="http://localhost:4000/python/2018/02/15/python-setup.html">&lt;p&gt;Setting up an OS X development environment for Python.&lt;/p&gt;
 
 &lt;h2 id=&quot;anaconda&quot;&gt;Anaconda&lt;/h2&gt;
 
@@ -66,7 +109,7 @@ export WORKON_HOME=~/programming/python/.virtualenvs
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkproject &amp;lt;name&amp;gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This will take full advantage of &lt;strong&gt;PROJECT_HOME&lt;/strong&gt; and &lt;strong&gt;WORKON_HOME&lt;/strong&gt;.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up an OS X development environment for Python.</summary></entry><entry><title type="html">Website Setup</title><link href="/website/2017/04/15/website-setup.html" rel="alternate" type="text/html" title="Website Setup" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>/website/2017/04/15/website-setup</id><content type="html" xml:base="/website/2017/04/15/website-setup.html">&lt;p&gt;Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.&lt;/p&gt;
+&lt;p&gt;This will take full advantage of &lt;strong&gt;PROJECT_HOME&lt;/strong&gt; and &lt;strong&gt;WORKON_HOME&lt;/strong&gt;.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up an OS X development environment for Python.</summary></entry><entry><title type="html">Website Setup</title><link href="http://localhost:4000/website/2017/04/15/website-setup.html" rel="alternate" type="text/html" title="Website Setup" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/website-setup</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/website-setup.html">&lt;p&gt;Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.&lt;/p&gt;
 
 &lt;h2 id=&quot;github-pages&quot;&gt;GitHub Pages&lt;/h2&gt;
 
@@ -100,7 +143,7 @@ export WORKON_HOME=~/programming/python/.virtualenvs
 &lt;p&gt;to preview the changes.&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--drafts&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;will include drafts.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</summary></entry><entry><title type="html">Markdown</title><link href="/website/2017/04/15/markdown-notes.html" rel="alternate" type="text/html" title="Markdown" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>/website/2017/04/15/markdown-notes</id><content type="html" xml:base="/website/2017/04/15/markdown-notes.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;p&gt;will include drafts.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</summary></entry><entry><title type="html">Markdown</title><link href="http://localhost:4000/website/2017/04/15/markdown-notes.html" rel="alternate" type="text/html" title="Markdown" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/markdown-notes</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/markdown-notes.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Here are some notes about the Markdown syntax, really only the things that are not guessable.  A comprehensive guide can be found &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
