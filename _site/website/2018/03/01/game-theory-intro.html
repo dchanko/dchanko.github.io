@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Python Development Setup</title>
-  <meta name="description" content="Setting up an OS X development environment for Python.">
+  <title>Game Theory Introduction</title>
+  <meta name="description" content="Some notes on the basics of game theory, taken from (Osborne &amp;amp; Rubinstein, 1994).">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/python/2018/02/15/python-setup.html">
+  <link rel="canonical" href="http://localhost:4000/website/2018/03/01/game-theory-intro.html">
   <link rel="alternate" type="application/rss+xml" title="Scores of Parentheses" href="/feed.xml">
   
   
@@ -67,72 +67,60 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Python Development Setup</h1>
+    <h1 class="post-title" itemprop="name headline">Game Theory Introduction</h1>
     <p class="post-meta">
-      <time datetime="2018-02-15T00:00:00-05:00" itemprop="datePublished">
+      <time datetime="2018-03-01T00:00:00-05:00" itemprop="datePublished">
         
-        Feb 15, 2018
+        Mar 1, 2018
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Setting up an OS X development environment for Python.</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<h2 id="anaconda">Anaconda</h2>
+<p>Some notes on the basics of game theory, taken from <a href="#game">(Osborne &amp; Rubinstein, 1994)</a>.</p>
 
-<p><a href="https://www.anaconda.com/download/#macos">Anaconda</a> provides a basic Python installation.</p>
+<h2 id="definition-of-a-game">Definition of a Game</h2>
 
-<h2 id="ide">IDE</h2>
+<p>A game consists of a set of \( N \) players and a set of \( A_{i} \) actions for each player \( i \in N \).  The set of outcomes, \( A = \times_{j \in N} A_{j} \), is the set of all possible action profiles, which in turn contain one action for each player:</p>
 
-<p>Install the Python plug-in for VS Code.</p>
+<p>\[ 
+a 
+= 
+(a_{j})_{j \in N}<br />
+=
+\begin{pmatrix}
+a_{1} \\
+a_{2} \\
+\vdots \\
+a_{|N|}
+\end{pmatrix}
+\]</p>
 
-<h2 id="basic-packages">Basic Packages</h2>
+<p>for \( a \in A \).  An alternate representation of a profile \( ( x ) \) for \( i \in N \) is \( ( x_{-i}, x_{i} ) \), where \( x_{-i} = ( x_{j})_{j \in N \backslash \{i\}} \) representing all members of profile \(  ( x ) \) for all players except \( i \), and \( x_{i} \) is the member of profile \( ( x ) \) for player \( i \).</p>
 
-<h3 id="virtualenv">virtualenv</h3>
+<p>A preference relation \( \succeq_{i} \) on \( A \) for each \( i \in N \) indicates which action profiles (outcomes) are preferred by the player. This may also be put in terms of a utility function \( u_{i} : A \to \mathbb{R} \) where \( u_{i}(a) \geq u_{i}(b) \implies a \succeq_{i} b \).</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>pip install virtualenv
-</code></pre></div></div>
+<p>A game may be summarized as</p>
 
-<p>The virtualenv package allows you to keep separate dependencies by project to avoid pollution and avoid version conflicts.</p>
+<p>\[
+\langle N, (A_{i}), (\succeq_{i}) \rangle
+\]</p>
 
-<h3 id="virtualenvwrapper">virtualenvwrapper</h3>
+<p>or</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>pip install virtualenvwrapper
-</code></pre></div></div>
+<p>\[
+\langle N, (A_{i}), (u_{i}) \rangle.
+\]</p>
 
-<p>The <strong>virtualenvwrapper</strong> package provides some helper commands for <strong>virtualenv</strong>.</p>
+<h2 id="nash-equilibrium">Nash Equilibrium</h2>
 
-<p>It facilitates the creating and loading of project/environment pairs and can be customized by exporting the following environment variables in your <strong>~/.profile</strong> file:</p>
+<p>A Nash Equilibrium of a game \( \langle N, (A_{i}), (\succeq_{i}) \rangle \) is a profile \( a^{\ast} \in A \) such that \( ( a_{-i}^{\ast}, a_{i}^{\ast} ) \succeq_{i} ( a_{-i}^{\ast}, a_{i} ) \) for all \( a_{i} \in A_{i} \). Each player \( i \in N \) prefers their action \( a_{i}^{\ast} \) in profile \( ( a^{\ast} ) \) more than any other given the actions \( a_{-i}^{\ast} \) of the other players.  In other words, no single player can profitably deviate from their action in \( ( a^{\ast} ) \).</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PROJECT_HOME=$HOME/programming/python/dev
-export WORKON_HOME=~/programming/python/.virtualenvs
-</code></pre></div></div>
+<h2 id="references">References</h2>
 
-<p><strong>PROJECT_HOME</strong> is where your project source code will reside.</p>
-
-<p><strong>WORKON_HOME</strong> is where the virutal environment for your project will reside.</p>
-
-<p>Add the following line as well to make the helper commands available:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "/Users/chanko/anaconda3/bin/virtualenvwrapper.sh"
-</code></pre></div></div>
-
-<p>The basic <strong>virtualenvwrapper</strong> commands are as follows.  When creating a virtual environment for a project, from that project’s source folder:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mkvirtualenv &lt;name&gt; 
-<span class="nv">$ </span>setvirtualenvproject
-<span class="nv">$ </span>workon &lt;name&gt;
-<span class="nv">$ </span>deactivate
-</code></pre></div></div>
-
-<p>Or if you are starting fresh with a new project:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkproject &lt;name&gt; 
-</code></pre></div></div>
-
-<p>This will take full advantage of <strong>PROJECT_HOME</strong> and <strong>WORKON_HOME</strong>.</p>
-
+<ol class="bibliography"><li><span id="game">Osborne, M. J., &amp; Rubinstein, A. (1994). <i>A Course in Game Theory</i>. The MIT Press.</span></li></ol>
 
   </div>
 
