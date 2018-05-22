@@ -2,7 +2,7 @@
 layout: post
 title: Game Theory Introduction
 date: 2018-03-01
-categories: website
+categories: game-theory 
 ---
 
 {% include lib/mathjax.html %}
