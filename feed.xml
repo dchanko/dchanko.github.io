@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-22T10:52:20-04:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-21T10:09:00-04:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
 </subtitle><author><name>David Chanko</name></author><entry><title type="html">Game Theory Introduction</title><link href="http://localhost:4000/game-theory/2018/03/01/game-theory-intro.html" rel="alternate" type="text/html" title="Game Theory Introduction" /><published>2018-03-01T00:00:00-05:00</published><updated>2018-03-01T00:00:00-05:00</updated><id>http://localhost:4000/game-theory/2018/03/01/game-theory-intro</id><content type="html" xml:base="http://localhost:4000/game-theory/2018/03/01/game-theory-intro.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Some notes on the basics of game theory, taken from &lt;a href=&quot;#game&quot;&gt;(Osborne &amp;amp; Rubinstein, 1994)&lt;/a&gt;.&lt;/p&gt;
@@ -55,7 +55,65 @@ a_{|N|}
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This will start a webserver serving up Jupyter Notebook.  The files displayed will be relative to the current directory.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Using Jupyter Notebook.</summary></entry><entry><title type="html">Python Development Setup</title><link href="http://localhost:4000/python/2018/02/15/python-setup.html" rel="alternate" type="text/html" title="Python Development Setup" /><published>2018-02-15T00:00:00-05:00</published><updated>2018-02-15T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/15/python-setup</id><content type="html" xml:base="http://localhost:4000/python/2018/02/15/python-setup.html">&lt;p&gt;Setting up an OS X development environment for Python.&lt;/p&gt;
+&lt;p&gt;This will start a webserver serving up Jupyter Notebook.  The files displayed will be relative to the current directory.&lt;/p&gt;
+
+&lt;h2 id=&quot;with-jekyll&quot;&gt;With Jekyll&lt;/h2&gt;
+
+&lt;p&gt;Many thanks to Brian Caffey &lt;a href=&quot;#jekyll-jupyter&quot;&gt;(Caffey, 2016)&lt;/a&gt; for his post used to get things started here and the basic example. Full details of this method are availble at the link but a summary is provided here with some additional information.&lt;/p&gt;
+
+&lt;p&gt;In the same directory as your markdown file for your blog post, start up your Juyper notebook and create a file. After things are done the way you like, save and then convert the notebook to markdown:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jupyter nbconvert &amp;lt;your_file&amp;gt;.ipynb &lt;span class=&quot;nt&quot;&gt;--to&lt;/span&gt; markdown
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will create a markdown file for the notebook and a subfolder containing any images.&lt;/p&gt;
+
+&lt;p&gt;If you open the markdown file, you can copy the text into your post’s markdown, however when you build the Jekyll site the paths to the images and other assets will break.  The following script can be used to convert the .ipynb file, rearrage the assets folder appropriately, and change the paths in the generated markdown files so they will work when run with Jekyll.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+jupyter nbconvert &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--to&lt;/span&gt; markdown
+
+&lt;span class=&quot;nv&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;basename &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%.*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;filepath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;dirname &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;DIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt; dirname &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;BASH_SOURCE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[0]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;mdfilepath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filepath&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;.md
+
+&lt;span class=&quot;nv&quot;&gt;assetspath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt;/assets/
+&lt;span class=&quot;nv&quot;&gt;foldername&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;_files
+
+rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$assetspath$foldername&lt;/span&gt;
+mv &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$filepath&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$foldername&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$assetspath&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$foldername&lt;/span&gt; 
+
+sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;s/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$foldername&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;assets&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$foldername&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/g&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$mdfilepath&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Drop that into the root directory of your Jekyll site (e.g. nb2md.sh) and run with&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./nb2md.sh ./_posts/Sample.ipynb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to create a markdown file that can be copied directly into your Jekyll file.  Sample result as displayed in Jekyll:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matplotlib&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&amp;lt;matplotlib.lines.Line2D at 0x112661dd8&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/Sample_files/Sample_0_1.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;jekyll-jupyter&quot;&gt;Caffey, B. (2016). Including Jupyter Notebooks in Jekyll blog posts. Retrieved from https://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name>David Chanko</name></author><summary type="html">Using Jupyter Notebook.</summary></entry><entry><title type="html">Python Development Setup</title><link href="http://localhost:4000/python/2018/02/15/python-setup.html" rel="alternate" type="text/html" title="Python Development Setup" /><published>2018-02-15T00:00:00-05:00</published><updated>2018-02-15T00:00:00-05:00</updated><id>http://localhost:4000/python/2018/02/15/python-setup</id><content type="html" xml:base="http://localhost:4000/python/2018/02/15/python-setup.html">&lt;p&gt;Setting up an OS X development environment for Python.&lt;/p&gt;
 
 &lt;h2 id=&quot;anaconda&quot;&gt;Anaconda&lt;/h2&gt;
 
@@ -240,4 +298,5 @@ $$
 &lt;h2 id=&quot;bibliography&quot;&gt;Bibliography&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;game&quot;&gt;Osborne, M. J., &amp;amp; Rubinstein, A. (1994). &lt;i&gt;A Course in Game Theory&lt;/i&gt;. The MIT Press.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;jekyll-scholar&quot;&gt;Keil, S. (2011). Jekyll-Scholar. Retrieved from https://github.com/inukshuk/jekyll-scholar&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name>David Chanko</name></author><summary type="html"></summary></entry></feed>
+&lt;li&gt;&lt;span id=&quot;jekyll-scholar&quot;&gt;Keil, S. (2011). Jekyll-Scholar. Retrieved from https://github.com/inukshuk/jekyll-scholar&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;jekyll-jupyter&quot;&gt;Caffey, B. (2016). Including Jupyter Notebooks in Jekyll blog posts. Retrieved from https://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name>David Chanko</name></author><summary type="html"></summary></entry></feed>
