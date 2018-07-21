@@ -92,6 +92,63 @@
 
 <p>This will start a webserver serving up Jupyter Notebook.  The files displayed will be relative to the current directory.</p>
 
+<h2 id="with-jekyll">With Jekyll</h2>
+
+<p>Many thanks to Brian Caffey <a href="#jekyll-jupyter">(Caffey, 2016)</a> for his post used to get things started here and the basic example. Full details of this method are availble at the link but a summary is provided here with some additional information.</p>
+
+<p>In the same directory as your markdown file for your blog post, start up your Juyper notebook and create a file. After things are done the way you like, save and then convert the notebook to markdown:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter nbconvert &lt;your_file&gt;.ipynb <span class="nt">--to</span> markdown
+</code></pre></div></div>
+
+<p>This will create a markdown file for the notebook and a subfolder containing any images.</p>
+
+<p>If you open the markdown file, you can copy the text into your post’s markdown, however when you build the Jekyll site the paths to the images and other assets will break.  The following script can be used to convert the .ipynb file, rearrage the assets folder appropriately, and change the paths in the generated markdown files so they will work when run with Jekyll.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+jupyter nbconvert <span class="nv">$1</span> <span class="nt">--to</span> markdown
+
+<span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="nt">--</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="k">)</span>
+<span class="nv">filename</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">filename</span><span class="p">%.*</span><span class="k">}</span><span class="s2">"</span>
+<span class="nv">filepath</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="k">)</span>
+<span class="nv">DIR</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span> <span class="nb">cd</span> <span class="s2">"</span><span class="k">$(</span> dirname <span class="s2">"</span><span class="k">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="k">}</span><span class="s2">"</span> <span class="k">)</span><span class="s2">"</span> <span class="o">&amp;&amp;</span> <span class="nb">pwd</span> <span class="k">)</span><span class="s2">"</span>
+<span class="nv">mdfilepath</span><span class="o">=</span><span class="nv">$filepath</span>/<span class="nv">$filename</span>.md
+
+<span class="nv">assetspath</span><span class="o">=</span><span class="nv">$DIR</span>/assets/
+<span class="nv">foldername</span><span class="o">=</span><span class="s2">"</span><span class="nv">$filename</span><span class="s2">"</span>_files
+
+rm <span class="nt">-rf</span> <span class="nv">$assetspath$foldername</span>
+mv <span class="nt">-f</span> <span class="nv">$filepath</span>/<span class="nv">$foldername</span> <span class="nv">$assetspath</span>/<span class="nv">$foldername</span> 
+
+sed <span class="nt">-i</span> <span class="nt">-e</span> <span class="s2">"s/</span><span class="nv">$foldername</span><span class="s2">/</span><span class="se">\/</span><span class="s2">assets</span><span class="se">\/</span><span class="nv">$foldername</span><span class="s2">/g"</span> <span class="nv">$mdfilepath</span> 
+</code></pre></div></div>
+
+<p>Drop that into the root directory of your Jekyll site (e.g. nb2md.sh) and run with</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./nb2md.sh ./_posts/Sample.ipynb
+</code></pre></div></div>
+
+<p>to create a markdown file that can be copied directly into your Jekyll file.  Sample result as displayed in Jekyll:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x112661dd8&gt;]
+</code></pre></div></div>
+
+<p><img src="/assets/Sample_files/Sample_0_1.png" alt="png" /></p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="jekyll-jupyter">Caffey, B. (2016). Including Jupyter Notebooks in Jekyll blog posts. Retrieved from https://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html</span></li></ol>
 
   </div>
 
