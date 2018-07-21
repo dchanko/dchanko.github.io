@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 git merge --no-commit gh-pages
 
 mv ./_site/* .

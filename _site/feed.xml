@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-21T10:09:00-04:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-21T11:51:25-04:00</updated><id>http://localhost:4000/</id><title type="html">Scores of Parentheses</title><subtitle>Notes about coding and software development. 
 </subtitle><author><name>David Chanko</name></author><entry><title type="html">Game Theory Introduction</title><link href="http://localhost:4000/game-theory/2018/03/01/game-theory-intro.html" rel="alternate" type="text/html" title="Game Theory Introduction" /><published>2018-03-01T00:00:00-05:00</published><updated>2018-03-01T00:00:00-05:00</updated><id>http://localhost:4000/game-theory/2018/03/01/game-theory-intro</id><content type="html" xml:base="http://localhost:4000/game-theory/2018/03/01/game-theory-intro.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Some notes on the basics of game theory, taken from &lt;a href=&quot;#game&quot;&gt;(Osborne &amp;amp; Rubinstein, 1994)&lt;/a&gt;.&lt;/p&gt;
@@ -201,7 +201,31 @@ export WORKON_HOME=~/programming/python/.virtualenvs
 &lt;p&gt;to preview the changes.&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--drafts&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;will include drafts.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</summary></entry><entry><title type="html">Markdown</title><link href="http://localhost:4000/website/2017/04/15/markdown-notes.html" rel="alternate" type="text/html" title="Markdown" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/markdown-notes</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/markdown-notes.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;p&gt;will include drafts.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated.&lt;/p&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
+
+&lt;p&gt;If you are serving up your website from a GitHub personal website project and using Jekyll plugins that are not supported by GitHub then GitHub will not be able to build your website.  What can be done instead is to keep a gh-pages branch with the full raw Jekyll posts and markdown files and use the master branch (GitHub default) to server up the generated HTML content.&lt;/p&gt;
+
+&lt;p&gt;This can be facilitated by working out of the gh-pages branch, checking in all your files, switching to the master branch and running the following script from the root of the master branch to merge in the latest generated content (i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;./_site&lt;/code&gt; contents) and clean up anything that should not be served.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+git merge &lt;span class=&quot;nt&quot;&gt;--no-commit&lt;/span&gt; gh-pages
+
+mv ./_site/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+
+rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; ./_&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+rm ./Gem&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+rm ./&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.md
+rm ./&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.yml
+
+git add &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt;
+
+git status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After inspecting the staged contents you can commit these changes to the master branch, push, and after a short delay your website will be updated.&lt;/p&gt;</content><author><name>David Chanko</name></author><summary type="html">Setting up a website like this is not hard at all, here are some notes for future reference and maintenance.</summary></entry><entry><title type="html">Markdown</title><link href="http://localhost:4000/website/2017/04/15/markdown-notes.html" rel="alternate" type="text/html" title="Markdown" /><published>2017-04-15T00:00:00-04:00</published><updated>2017-04-15T00:00:00-04:00</updated><id>http://localhost:4000/website/2017/04/15/markdown-notes</id><content type="html" xml:base="http://localhost:4000/website/2017/04/15/markdown-notes.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Here are some notes about the Markdown syntax, really only the things that are not guessable.  A comprehensive guide can be found &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 

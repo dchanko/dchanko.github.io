@@ -42,3 +42,30 @@ to preview the changes.
 $ bundle exec jekyll serve --drafts
 ``` 
 will include drafts.  As you edit, your changes will be picked up automatically.  After getting things setup, checking in, and pushing to GitHub, your site will be automatically updated. 
+
+## GitHub
+
+If you are serving up your website from a GitHub personal website project and using Jekyll plugins that are not supported by GitHub then GitHub will not be able to build your website.  What can be done instead is to keep a gh-pages branch with the full raw Jekyll posts and markdown files and use the master branch (GitHub default) to server up the generated HTML content.
+
+This can be facilitated by working out of the gh-pages branch, checking in all your files, switching to the master branch and running the following script from the root of the master branch to merge in the latest generated content (i.e. `./_site` contents) and clean up anything that should not be served.
+
+```bash
+#!/usr/bin/env bash
+
+git merge --no-commit gh-pages
+
+mv ./_site/* .
+
+rm -rf ./_*
+rm ./Gem*
+rm ./*.md
+rm ./*.yml
+
+git add -A
+
+git status
+```
+
+After inspecting the staged contents you can commit these changes to the master branch, push, and after a short delay your website will be updated.
+
+
